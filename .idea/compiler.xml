@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="moviereview.app-controllers.main" target="1.8" />
+      <module name="moviereview.app-controllers.test" target="1.8" />
+      <module name="moviereview.app-services.main" target="1.8" />
+      <module name="moviereview.app-services.test" target="1.8" />
+      <module name="moviereview.controllers.main" target="1.8" />
+      <module name="moviereview.controllers.test" target="1.8" />
+      <module name="moviereview.moviereview-repository.main" target="1.8" />
+      <module name="moviereview.moviereview-repository.test" target="1.8" />
+      <module name="moviereview.services.main" target="1.8" />
+      <module name="moviereview.services.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
