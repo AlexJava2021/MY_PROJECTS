@@ -1,0 +1,11 @@
+Building a Multi-Module Spring Boot Application with Gradle
+https://reflectoring.io/spring-boot-gradle-multi-module/
+
+springboot + gradle build multi-module project
+https://www.programmersought.com/article/54863633755/
+
+Part-1: Spring & Gradle - Multi Module Project
+https://dev.to/pandiyan90/part-1-spring-gradle-multi-module-project-1j8a
+
+Use Gradle to build a multi-module SpringBoot project
+https://www.programmersought.com/article/69704179497/

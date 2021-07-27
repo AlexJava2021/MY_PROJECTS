@@ -1,0 +1,5 @@
+rootProject.name = 'moviereview'
+include 'app-repository'
+include 'app-controller'
+include 'app-service'
+
