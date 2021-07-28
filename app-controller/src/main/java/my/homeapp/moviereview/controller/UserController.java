@@ -17,6 +17,6 @@ public class UserController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserResponse> create(@NotNull @RequestBody CreateUserRequest createUserRequest)
     {
-
+        return null;
     }
 }

@@ -1,37 +1,42 @@
-/*ext {
-    springBootVersion = '2.4.3'
+buildscript {
+    ext {
+        springBootVersion = '2.4.3'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'idea'
+
+/*dependencies {
+    compile project(':app-controller')
+    compile project(':app-service')
+    compile project(':aapp-repository')
 }*/
 
-plugins {
-    id 'org.springframework.boot' version '2.4.3'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
-}
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
-dependencies {
-    compileOnly 'org.projectlombok:lombok'
-    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.4.3'
-    //testCompile group: 'junit', name: 'junit', version: '4.12'
+allprojects {
+    group 'my.homeapp'
+    version '1.0-SNAPSHOT'
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+    }
 }
 
 subprojects {
-
-    group = 'my.homeapp'
-    version = '1.0-SNAPSHOT'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
     apply plugin: 'java'
-    apply plugin: 'io.spring.dependency-management'
     apply plugin: 'java-library'
 
     repositories {
+        mavenLocal()
         mavenCentral()
     }
 
@@ -40,10 +45,10 @@ subprojects {
         testCompile group: 'junit', name: 'junit', version: '4.12'
     }
 
-    dependencyManagement {
+    /*dependencyManagement {
         imports {
             mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.7.RELEASE")
         }
-    }
+    }*/
 
 }
