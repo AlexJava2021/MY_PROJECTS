@@ -1,5 +1,7 @@
 package my.homeapp.moviereview.model;
 
+import lombok.Data;
+
 import java.time.LocalDateTime;
 
 /**

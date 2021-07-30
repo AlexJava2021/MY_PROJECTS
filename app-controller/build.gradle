@@ -12,9 +12,10 @@ plugins {
     id 'org.springframework.boot'
 }
 
-bootJar {
-    layered ()
-}
+/*bootJar {
+    mainClass = 'my.homeapp.MovieReviewApplication'
+    //layered ()
+}*/
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'

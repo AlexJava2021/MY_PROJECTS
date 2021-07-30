@@ -1,5 +1,6 @@
 package my.homeapp.moviereview.converter;
 
+import my.homeapp.moviereview.entity.BaseEntity;
 import my.homeapp.moviereview.model.BaseModel;
 
 /**
