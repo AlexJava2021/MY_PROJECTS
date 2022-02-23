@@ -1,70 +1,54 @@
-buildscript {
-    ext {
-        springBootVersion = '2.4.3'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
-}
 
 plugins {
-    id 'org.springframework.boot' version '2.4.3'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'idea'
-    id 'application'
+    id 'java'
 }
 
-application {
-    mainClassName = 'my.homeapp.MovieReviewApplication'
+group 'com.epam.esm'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
 }
 
-/*dependencies {
-    compile project(':app-controller')
-    compile project(':app-service')
-    compile project(':aapp-repository')
-}*/
+
 
 allprojects {
-    group 'my.homeapp'
-    version '1.0-SNAPSHOT'
-    apply plugin: 'java'
-    repositories {
-        mavenCentral()
-    }
+    apply plugin: 'war'
 }
-
 subprojects {
 
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-
-    apply plugin: 'java'
-    //apply plugin: 'java-library'
-    apply plugin: 'io.spring.dependency-management'
-
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
+    apply plugin :'java'
 
     dependencies {
-        compileOnly 'org.projectlombok:lombok'
-        testCompile group: 'junit', name: 'junit', version: '4.12'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+        implementation 'org.springframework:spring-web:5.3.15'
+        implementation 'org.springframework:spring-beans:5.3.15'
+        implementation 'org.springframework:spring-context:5.3.15'
+        implementation 'org.springframework:spring-core:5.3.15'
+        implementation 'org.springframework:spring-webmvc:5.3.15'
+        implementation 'org.springframework:spring-test:5.3.15'
+        implementation 'org.springframework:spring-jdbc:5.3.15'
+        testImplementation 'org.hamcrest:hamcrest:2.2'
+        compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+        implementation group: 'com.zaxxer', name: 'HikariCP', version: '4.0.3'
+        compileOnly 'org.projectlombok:lombok:1.18.22'
+        annotationProcessor 'org.projectlombok:lombok:1.18.22'
+        testCompileOnly 'org.projectlombok:lombok:1.18.22'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+        annotationProcessor('org.hibernate.validator:hibernate-validator-annotation-processor:7.0.2.Final')
+
+
     }
 
-    dependencyManagement {
-        imports {
-            mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
-        }
+    test {
+        useJUnitPlatform()
     }
-
-    /*dependencyManagement {
-        imports {
-            mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.7.RELEASE")
-        }
-    }*/
-
 }
+
+dependencies {
+    implementation project(':web')
+}
+
+

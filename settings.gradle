@@ -1,5 +1,5 @@
-rootProject.name = 'moviereview'
-include 'app-repository'
-include 'app-controller'
-include 'app-service'
+rootProject.name = 'CertificateApp'
+include 'web'
+include 'core'
+include 'persistence'
 
